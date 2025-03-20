@@ -1,3 +1,4 @@
+/* Estilos generales */
 body {
   font-family: Arial, sans-serif;
   background-color: #bfecb6;
@@ -5,6 +6,7 @@ body {
   padding: 20px;
 }
 
+/* Contenedor principal del juego */
 .game-container {
   display: flex;
   flex-direction: column;
@@ -12,24 +14,28 @@ body {
   gap: 20px;
 }
 
+/* Contenido del juego (tablero y movimientos) */
 .game-content {
   display: flex;
   justify-content: center;
   gap: 40px;
 }
 
+/* Contenedor del tablero */
 .board-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Tablero */
 .board {
   display: grid;
   grid-template-columns: repeat(3, 80px);
   gap: 5px;
 }
 
+/* Casillas del tablero */
 .square {
   width: 80px;
   height: 80px;
@@ -41,6 +47,7 @@ body {
   cursor: pointer;
 }
 
+/* Contenedor de los botones de movimientos */
 .moves-container {
   display: flex;
   flex-direction: column;
@@ -49,6 +56,7 @@ body {
   margin-top: 10px;
 }
 
+/* Botones de movimientos */
 .move-button {
   padding: 8px;
   margin: 5px 0;
@@ -59,9 +67,9 @@ body {
   border-radius: 4px;
 }
 
+/* Botón de reinicio */
 .reset-button {
   margin-top: 10px;
-  margin-left: -140px; /* Ajusta este valor según la posicion deseada */
   padding: 10px 20px;
   background-color: #0d8f38;
   color: white;
@@ -70,12 +78,14 @@ body {
   border-radius: 4px;
 }
 
+/* Mensaje de estado */
 .status-message {
   font-size: 20px;
   font-weight: bold;
   margin-top: 10px;
 }
 
+/* Botón para mostrar más información */
 .info-button {
   padding: 10px 20px;
   background-color: #2b40b8;
@@ -85,6 +95,7 @@ body {
   border-radius: 4px;
 }
 
+/* Sección de información adicional */
 .extra-info {
   max-width: 80%;
   background: white;
@@ -94,8 +105,81 @@ body {
   text-align: left;
   margin-top: 20px;
 }
+
+/* Imagen dentro de la información extra */
 .game-image {
   display: block;
-  margin: auto; /* Centra la imagen horizontalmente */
-  max-width: 100%; /* Mantiene su tamaño sin que se desborde */
+  margin: auto;
+  max-width: 100%;
+}
+
+/* --- 🔹 RESPONSIVIDAD 🔹 --- */
+
+/* Ajustes en pantallas pequeñas (tablets y móviles) */
+@media (max-width: 768px) {
+  .game-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+/* Ajustes en pantallas muy pequeñas (móviles) */
+@media (max-width: 480px) {
+  /* Ajustar tamaño del tablero */
+  .board {
+    grid-template-columns: repeat(3, 60px);
+  }
+
+  .square {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+  }
+
+  /* Ajustar el contenedor de movimientos */
+  .moves-container {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Ajustar los botones de movimientos */
+  .move-button {
+    width: 45%;
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  /* Centrar el botón de reinicio */
+  .reset-button {
+    margin-left: 0;
+    width: 80%;
+    max-width: 200px;
+  }
+
+  /* Ajustar la información adicional */
+  .extra-info {
+    max-width: 95%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* Ajustar imagen dentro de la información */
+  .game-image {
+    width: 100%;
+    height: auto;
+  }
+}
+/* Ajustes en pantallas muy pequeñas (móviles) */
+@media (max-width: 480px) {
+  .move-button {
+    width: 90%; /* Aumentar el ancho del botón */
+    font-size: 11px; /* Reducir el tamaño de fuente */
+    padding: 8px 5px; /* Ajustar el padding */
+    white-space: nowrap; /* Evitar que el texto se divida en dos líneas */
+    text-overflow: ellipsis; /* Agregar puntos suspensivos si es necesario */
+    overflow: hidden; /* Evitar que el texto se desborde */
+  }
 }
